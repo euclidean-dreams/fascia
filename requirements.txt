@@ -1,0 +1,2 @@
+flatbuffers==2.0
+pyzmq==22.2.1
