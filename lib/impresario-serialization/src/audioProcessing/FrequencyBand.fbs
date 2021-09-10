@@ -1,0 +1,12 @@
+namespace ImpresarioSerialization;
+
+enum FrequencyBand:byte {
+    all,
+    subBass,
+    bass,
+    lowMidrange,
+    midrange,
+    upperMidrange,
+    presence,
+    brilliance
+}

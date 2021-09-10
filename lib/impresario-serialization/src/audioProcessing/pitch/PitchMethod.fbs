@@ -1,0 +1,10 @@
+namespace ImpresarioSerialization;
+
+enum PitchMethod:byte {
+    schmitt,
+    fcomb,
+    mcomb,
+    yin,
+    yinfast,
+    yinfft
+}

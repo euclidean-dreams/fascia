@@ -1,0 +1,8 @@
+namespace ImpresarioSerialization;
+
+table FloatArrayMorsel {
+    field:uint64;
+    value:[float32];
+}
+
+root_type FloatArrayMorsel;
