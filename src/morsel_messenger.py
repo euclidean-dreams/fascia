@@ -9,7 +9,7 @@ from ImpresarioSerialization import IdentifierWrapper, FloatMorsel, Identifier, 
 class MorselMessenger:
     def __init__(self, context, endpoint):
         self.socket = context.socket(zmq.PUB)
-        self.socket.connect(endpoint)
+        self.socket.bind(endpoint)
         sleep(1)
 
     def send_float_morsel(self, field, value):

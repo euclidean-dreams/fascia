@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="dc86eccd-1082-49ab-9a9c-40782e2e3447" name="fascia">
+      <webServer id="dc86eccd-1082-49ab-9a9c-40782e2e3447" name="fascia (project level)">
         <fileTransfer accessType="SFTP" host="10.0.0.219" port="22" sshConfigId="2b802b9b-752f-427c-805e-f7565c9b2355" sshConfig="fascia">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />

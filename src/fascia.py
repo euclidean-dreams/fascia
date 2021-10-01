@@ -23,26 +23,18 @@ class Fascia:
             Button(7)
         ]
         for button in self.__buttons:
-            button.when_released = self.__button_pressed
+            button.when_activated = self.__button_pressed
 
     def __button_pressed(self, device):
         # button fields are 100 - 105
-        pin = int(device.pin._number) - 2 + 100
-        self.__performer_messenger.send_float_morsel(int(pin), 1)
+        pin = int(device.pin._number) - 2
+        self.__performer_messenger.send_float_morsel(int(pin) + 100, 1)
 
     def start(self):
         while True:
             sleep(0.1)
-            # send pot 0
-            self.__performer_messenger.send_float_morsel(10, self.__potentiometers[0].value)
-
-            # send pot 1
+            self.__conductor_messenger.send_float_morsel(10, self.__potentiometers[0].value)
             self.__performer_messenger.send_float_morsel(11, self.__potentiometers[1].value)
-
-            # send equalizer values
-            equalizer_values = [
-                self.__potentiometers[2].value * 2,
-                self.__potentiometers[3].value * 2,
-                self.__potentiometers[4].value * 2
-            ]
-            self.__conductor_messenger.send_float_array_morsel(0, equalizer_values)
+            self.__performer_messenger.send_float_morsel(12, self.__potentiometers[2].value)
+            self.__performer_messenger.send_float_morsel(13, self.__potentiometers[3].value)
+            self.__performer_messenger.send_float_morsel(14, self.__potentiometers[4].value)
