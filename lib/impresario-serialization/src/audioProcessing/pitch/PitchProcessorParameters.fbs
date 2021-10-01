@@ -1,0 +1,11 @@
+include "audioProcessing/pitch/PitchMethod.fbs";
+
+namespace ImpresarioSerialization;
+
+table PitchProcessorParameters {
+    method:PitchMethod;
+    threshold:float32;
+    silence:float32;
+}
+
+root_type PitchProcessorParameters;

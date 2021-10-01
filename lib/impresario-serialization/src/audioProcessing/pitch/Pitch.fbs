@@ -1,0 +1,14 @@
+include "audioProcessing/pitch/PitchMethod.fbs";
+include "audioProcessing/FrequencyBand.fbs";
+
+namespace ImpresarioSerialization;
+
+table Pitch {
+    originTimestamp:uint64;
+    frequencyBand:FrequencyBand;
+    method:PitchMethod;
+    pitch:uint8;
+    confidence:float32;
+}
+
+root_type Pitch;
