@@ -1,5 +1,0 @@
-namespace ImpresarioSerialization;
-
-enum OnsetMethod:byte {
-    specflux
-}

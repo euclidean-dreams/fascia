@@ -1,8 +1,0 @@
-namespace ImpresarioSerialization;
-
-table DisplaySignal {
-    originTimestamp:uint64;
-    samples:[float32];
-}
-
-root_type DisplaySignal;
