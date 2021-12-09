@@ -1,17 +1,15 @@
 import zmq
 
 from fascia import Fascia
-from morsel_messenger import MorselMessenger
+from publisher import Publisher
 
-CONDUCTOR_ENDPOINT = "tcp://0.0.0.0:44440"
-PERFORMER_ENDPOINT = "tcp://0.0.0.0:44449"
+ENDPOINT = "tcp://0.0.0.0:44440"
 
 
 def main():
     context = zmq.Context()
-    performer_messenger = MorselMessenger(context, PERFORMER_ENDPOINT)
-    conductor_messenger = MorselMessenger(context, CONDUCTOR_ENDPOINT)
-    fascia = Fascia(performer_messenger, conductor_messenger)
+    publisher = Publisher(context, ENDPOINT)
+    fascia = Fascia(publisher)
     fascia.start()
 
 

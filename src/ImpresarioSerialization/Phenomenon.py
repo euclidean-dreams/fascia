@@ -6,51 +6,51 @@ import flatbuffers
 from flatbuffers.compat import import_numpy
 np = import_numpy()
 
-class FloatMorsel(object):
+class Phenomenon(object):
     __slots__ = ['_tab']
 
     @classmethod
     def GetRootAs(cls, buf, offset=0):
         n = flatbuffers.encode.Get(flatbuffers.packer.uoffset, buf, offset)
-        x = FloatMorsel()
+        x = Phenomenon()
         x.Init(buf, n + offset)
         return x
 
     @classmethod
-    def GetRootAsFloatMorsel(cls, buf, offset=0):
+    def GetRootAsPhenomenon(cls, buf, offset=0):
         """This method is deprecated. Please switch to GetRootAs."""
         return cls.GetRootAs(buf, offset)
-    # FloatMorsel
+    # Phenomenon
     def Init(self, buf, pos):
         self._tab = flatbuffers.table.Table(buf, pos)
 
-    # FloatMorsel
-    def Field(self):
+    # Phenomenon
+    def Identity(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
-            return self._tab.Get(flatbuffers.number_types.Uint64Flags, o + self._tab.Pos)
+            return self._tab.Get(flatbuffers.number_types.Int32Flags, o + self._tab.Pos)
         return 0
 
-    # FloatMorsel
-    def Value(self):
+    # Phenomenon
+    def Quantity(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             return self._tab.Get(flatbuffers.number_types.Float32Flags, o + self._tab.Pos)
         return 0.0
 
 def Start(builder): builder.StartObject(2)
-def FloatMorselStart(builder):
+def PhenomenonStart(builder):
     """This method is deprecated. Please switch to Start."""
     return Start(builder)
-def AddField(builder, field): builder.PrependUint64Slot(0, field, 0)
-def FloatMorselAddField(builder, field):
-    """This method is deprecated. Please switch to AddField."""
-    return AddField(builder, field)
-def AddValue(builder, value): builder.PrependFloat32Slot(1, value, 0.0)
-def FloatMorselAddValue(builder, value):
-    """This method is deprecated. Please switch to AddValue."""
-    return AddValue(builder, value)
+def AddIdentity(builder, identity): builder.PrependInt32Slot(0, identity, 0)
+def PhenomenonAddIdentity(builder, identity):
+    """This method is deprecated. Please switch to AddIdentity."""
+    return AddIdentity(builder, identity)
+def AddQuantity(builder, quantity): builder.PrependFloat32Slot(1, quantity, 0.0)
+def PhenomenonAddQuantity(builder, quantity):
+    """This method is deprecated. Please switch to AddQuantity."""
+    return AddQuantity(builder, quantity)
 def End(builder): return builder.EndObject()
-def FloatMorselEnd(builder):
+def PhenomenonEnd(builder):
     """This method is deprecated. Please switch to End."""
     return End(builder)
