@@ -13,14 +13,6 @@ class Fascia:
             MCP3008(channel=2),
             MCP3008(channel=3),
             MCP3008(channel=4),
-
-            # # second rack
-            MCP3008(channel=0, clock_pin=12, mosi_pin=14, miso_pin=13, select_pin=15),
-            MCP3008(channel=1, clock_pin=12, mosi_pin=14, miso_pin=13, select_pin=15),
-            MCP3008(channel=2, clock_pin=12, mosi_pin=14, miso_pin=13, select_pin=15),
-            MCP3008(channel=3, clock_pin=12, mosi_pin=14, miso_pin=13, select_pin=15),
-            MCP3008(channel=4, clock_pin=12, mosi_pin=14, miso_pin=13, select_pin=15),
-            MCP3008(channel=5, clock_pin=12, mosi_pin=14, miso_pin=13, select_pin=15)
         ]
         self.__buttons = [
             # first rack
